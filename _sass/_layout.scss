@@ -72,7 +72,7 @@ c {display:none}
 .page-content {
     @include media-query-max($on-screen) {
         background-color: $background-color-white;
-        padding-bottom: 3em;
+	min-height:100vh;
     }
     @include media-query-min($on-screen) {
         .wrapper {
