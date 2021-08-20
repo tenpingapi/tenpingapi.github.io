@@ -10,7 +10,7 @@ title: 망고서치
 email: placeless@outlook.com
 author: "Mr. Hello"
 logo: "./apple-touch-icon.png"
-lang: "zh-cmn-Hans"
+lang: "ko"
 description: "All animals are equal, but some animals are more equal than others."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ae3a.github.io" # the base hostname & protocol for your site
