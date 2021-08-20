@@ -4,16 +4,8 @@ layout: default
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 <div class="post-content" itemprop="articleList">
-HELLO !
-{% for post in site.posts %}
-  {% assign currentdate = post.date | date: "%Y" %}
-  {% if currentdate != date %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <ul class="post-list" style="display:none">
-    {% assign date = currentdate %}
-  {% endif %}
-    <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">1</a></li>
-  {% if forloop.last %}</ul>{% endif %}
-{% endfor %}
+
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script>
+
 </div>
 </article>
