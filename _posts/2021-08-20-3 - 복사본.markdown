@@ -1,0 +1,563 @@
+---
+layout: post
+title:  "[Nginx] 웹 서버 Nginx 에 대해서..."
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그인
+블로그 홈화면
+프로필 이미지
+개발냥발
+공지
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+Back-End/Nginx
+[Nginx] 웹 서버 Nginx 에 대해서...
+I'm Henu
+2021. 8. 13. 17:11댓글수1공감수3
+Django로 구축한 API 서버와 React를 연결하고 배포하기 위해서 Nginx를 사용해보았다.
+
+둘을 연결하기 위해서 Nginx에 대한 이해가 반드시 필요했고
+
+앞으로 Nginx를 공부하며 알게 되는 지식들을 최대한 자세히 이 포스팅에 담을 예정이다.
+
+그리고 Nginx만 다루는 게 아니라 웹 서버의 전반적인 이해를 위해서 조금이라도 궁금한 점이 생기면 옆길로 계속 새어나갈 예정이다.
+
+ 
+
+Nginx란? #1
+간단히 말해서 경량화된 소프트웨어 웹 서버이다.
+
+웹 서버?
+다른말로 HTTP Server라고도 한다. 웹 브라우저의 파트너로서 서버의 정보를 제공하는 소프트웨어라고 할 수 있다.
+
+대표적으로 Nginx, Apache가 있다.
+
+웹 서버는 인터넷 네트워크 위에서 HTTP 프로토콜을 이용해 HTML, CSS, Javascript, image/mediafile과 같은 정적인 정보들을 웹 브라우저에 전송한다.
+
+ 
+
+웹 브라우저?
+크롬, 사파리, 네이버 웨일, 파이어폭스, 인터넷 익스플로러? 등을 웹 브라우저라고 한다.
+
+웹 서버와 통신하며 html문서나 파일을 출력해준다.
+
+ 
+
+HTTP 프로토콜?
+웹에서 데이터를 주고받기 위한 일종의 규약이다. 
+
+HTTP 프로토콜은 상태를 가지고 있지 않다. 따라서 이전 데이터 요청과 다음 데이터 요청이 완전히 분리되어 독립적으로 관리할 수 있다.
+
+이와 같은 이점으로 당장 받은 요청 이외의 정보를 추가적으로 관리할 필요가 없어지고, 다수의 요청 및 서버의 부하를 줄일 수 있는 성능의 향상을 가져왔다.
+
+HTTP 프로토콜은 일반적으로 TCP/IP 통신 위에서 동작하며 기본 포트는 80번이다.
+
+ 
+
+URL (Uniform Resource Locators)
+서버에 자원을 요청하기 위해서 입력하는 영문 주소.
+
+
+출처 https://joshua1988.github.io/web-development/http-part1/
+ 
+
+HTTP의 주요 메서드
+html form에서 method를 지정해줄 때 사용하는 것들
+
+GET : 존재하는 자원에 대한 요청
+POST : 새로운 자원을 생성
+PUT : 존재하는 자원에 대한 변경
+DELETE : 존재하는 자원에 대한 삭제
+ 
+
+HTTP 상태코드
+2xx - 성공
+
+200번대의 상태 코드는 대부분 성공을 의미한다.
+
+200 : GET 요청에 대한 성공
+204 : No Content. 성공했으나 응답 본문에 데이터가 없음
+205 : Reset Content. 성공했으나 클라이언트의 화면을 새로 고침 하도록 권고
+206 : Partial Conent. 성공했으나 일부 범위의 데이터만 반환
+ 
+
+3xx - 리다이렉션
+
+300번대 상태 코드는 대부분 클라이언트가 이전 주소로 데이터를 요청하여 서버에서 새로운 URL로 리다이렉트를 유도하는 경우이다.
+
+301 : Moved Permanently, 요청한 자원이 새 URL에 존재
+303 : See Other, 요청한 자원이 임시 주소에 존재
+304 : Not Modified, 요청한 자원이 변경되지 않았으므로 클라이언트에서 캐싱된 자원을 사용하도록 권고. ETag와 같은 정보를 활용하여 변경 여부를 확인
+ 
+
+4xx - 클라이언트 에러
+
+400번대 상태 코드는 대부분 클라이언트의 코드가 잘못된 경우이다. 없는 자원을 요청했거나 요청 권한 등이 잘못된 경우에 발생한다. 
+
+400 : Bad Request, 잘못된 요청
+401 : Unauthorized, 권한 없이 요청. Authorization 헤더가 잘못된 경우
+403 : Forbidden, 서버에서 해당 자원에 대해 접근 금지
+404 : Not found, 요청한 자원이 서버에 없음
+405 : Method Not Allowed, 허용되지 않은 요청 메서드
+409 : Conflict, 최신 자원이 아닌데 업데이트하는 경우. ex) 파일 업로드 시 버전 충돌
+ 
+
+5xx - 서버 에러
+
+500번대 상태 코드는 서버 쪽에서 오류가 난 경우이다.
+
+501 : Not Implemented, 요청한 동작에 대해 서버가 수행할 수 없는 경우
+503 : Service Unavailable, 서버가 과부하 또는 유지 보수로 내려간 경우
+ 
+
+앞에서 설명한 URL, Method, 상태 코드를 종합해서 그림으로 나타내 보면 다음과 같다.
+
+
+TCP/IP?
+TCP/IP 는 두 개의 프로토콜(TCP, IP)을 사용하여 데이터 통신을 하는 것을 의미한다.
+
+IP(Internet Protocol)는 복잡한 네트워크 망을 패킷 통신 방식(데이터를 작은 조각들로 나뉘어서 보내는 방식)을 사용해 데이터를 가장 효율적인 방법으로 보내는 작업을 한다.
+
+TCP(Transmission Control Protocol)는 조각난 데이터를 받으면서 순서가 맞지 않다면 정렬하고, 누락된 데이터를 점검하여 다시 요청하는 작업을 한다.
+
+ 
+
+Nginx란? #2
+1. HTTP Server로서 정적 파일을 Serve 해준다
+클라이언트(유저)로부터 요청을 받았을 때 WAS를 거치지 않고 요청에 맞는 정적 파일을 응답해주는 HTTP server로서 활용할 수 있다.
+
+HTML, CSS 같은 정적인 리소스에 대한 요청을 Nginx가 처리해준다.
+
+React의 build 된 파일들도 정적인 리소스라고 볼 수 있고 따라서 Nginx가 index.html 같은 메인 페이지를 랜더링 해줄 수 있다.
+
+ 
+
+2. Reverse Proxy Server로서 Client와 Server를 중개해 준다.
+Reverse Proxy Server로서 Client의 Request와 Server의 Response를 중개하는 서버로 동작하게 할 수 있다. 이 과정에서 nginx는 로드밸런서로서의 역할을 수행할 수 있다. 
+
+동적으로 계산되거나 전달되어야 하는 사항들은 WAS에게 맡긴다.
+
+ 
+
+ 
+
+WAS (Web Application Server)
+웹 서버로부터 오는 동적인 요청들을 처리하는 서버이다. 흔히 사용하는 웹 프레임워크를 사용해 구축하는 백엔드를 WAS라고 생각하면 될듯하다. 주로 데이터베이스 서버와 같이 관리된다. 
+
+좀 더 자세한 설명은 바로 아래에 있다.
+
+ 
+
+Django와 WSGI, Gunicorn
+Django가 클라이언트의 요청을 웹서버를 통해서 받을 때 WSGI라는 것을 반드시 거치게 된다.
+
+WSGI(Web Server Gateway Interface)는 이름만 봐도 웹에 대한 인터페이스 임을 알 수 있다. 그래서 범용적인 웹 인터페이스라고 생각할수도 있지만 WSGI는 오직 파이썬을 위한 인터페이스이다. 웹 서버에서 전달해주는 HttpRequest들을 파이썬이 이해할 수 있는 언어로 해석해서 파이썬 프로그램으로 보내주는 역할을 맡게된다. Django는 Python으로 만들어진 프레임워크이고 따라서 Django와 웹서버를 결합하기 위해선 WSGI가 필요하다.
+
+ 
+
+Django에는 runserver라고 불리는 개발환경에 적합한 서버를 돌릴 수 있는 기능이 있다. 하지만 runserver는 단일 스레드로 동작하기 때문에 요청이 많아지면 처리능력이 현저히 떨어지는 단점 때문에 실제 배포환경에서는 사용해서는 안되는 방법이다. 그래서 WSGI를 사용하게된다. WSGI는 멀티 스레드를 생성할 수 있기 때문에 요청이 많아져도 안정적으로 처리가 가능하다. WSGI의 종류에는 uwsgi, gunicorn이 양대산맥으로 있지만 최근 gunicorn의 성능이 uwsgi보다 좋아졌기 때문에 대부분 gunicorn을 사용하는 추세이다.
+
+ 
+
+그래서 Django의 WSGI로 gunicorn을 사용하게되고 Django와 gunicorn을 합쳐서 WAS라고 부른다.
+
+ 
+
+흐름
+
+ 
+
+Nginx와 관련된 개념들
+Proxy?
+포워드 프록시와 리버스 프록시를 설명하기 전에 Proxy 자체에 대해서 알아보자
+
+클라이언트가 데이터를 요청하면 서버가 요청한 리소스를 가져다줄 것이다. 하지만 중간에 클라이언트의 요청을 서버로 보내주는 Proxy라고 불리는 서버가 하나 존재하게 된다.
+
+이처럼 프록시는 중계 서버라고 이해하면 편하다. 클라이언트와 서버가 서로 직접적으로 통신하지 않고, 프록시 서버를 이용해서 리소스를 전달하며 보안, 트래픽 분산, 캐시 사용(속도 향상) 등 여러 장점을 가지는 중요한 서버이다.
+
+ 
+
+
+출처 https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9D%EC%8B%9C_%EC%84%9C%EB%B2%84
+ 
+
+ 
+
+Forword Proxy
+
+일반적인 프록시 서버를 말하며, 클라이언트와 웹 서버의 중개역할로 클라이언트가 요청 시 Proxy서버는 해당 요청을 웹 서버로 중계해 자원을 가져오는 개념이다.
+
+프록시 서버는 클라이언트가 요청하기 전까지 웹 서버의 주소를 알 수 없다는 게 특징이다.
+
+ 
+
+예를 들어 회사 내부망에서 인터넷의 www.google.com 으로 연결해 달라고 서버에 요청을 보내면 이때 프록시 서버를 호출하게 되는데 이러한 방식이 포워드 프록시이다.
+
+ 
+
+포워드 프록시 방식은 정해진 사이트에만 연결이 가능하게끔 설정이 가능해서 주로 회사 내부의 인트라넷 등 보안이 중요한 환경에서 주로 사용된다.
+
+ 
+
+Reverse Proxy
+
+클라이언트와 서버 사이에(서버 앞에) 위치하여 보안, 로드밸런싱 역할을 한다. 그래서 클라이언트가 특정 리소스를 요청을 하면 프록시 서버가 WAS에 요청 후 응답 받은 리소스를 클라이언트에게 전달해주는 개념이다.
+
+예를 들자면 이 방식은 특정 ip주소에서 제공하는 api서버를 호출하기 위해서 인터넷에 있는 클라이언트가 리버스 프록시 서버에 api를 요청하여 응답을 받는 방식이다.
+
+ 
+
+리버스 프록시 서버는 실제 서버가 어디서 동작하는지 감추는 역할을 한다. 클라이언트는 리버스 프록시를 통해서 리소스를 요청하기 때문에 서버의 IP주소를 알 수 없다. 그리고 리버스 프록시 서버는 실제 서버들에 대한 주소를 매핑하고 있어야 한다. 
+
+ 
+
+내가 느끼기에 포워드 프록시는 제한에 걸리는 것들 빼고 모든 심부름을 다 수행해주는 심부름꾼 같고, 리버스 프록시는 특정 가게와 연결되어 있으면서 손님이 A라는 물건을 요청하면 연결된 가게의 A 물건만 전문적으로 갖다 주는 역할을 수행하는 것 같다.
+
+ 
+
+ 
+
+로드밸런싱?
+서버의 부하(Load)를 분산(Balancing)시키는 기술이다.
+
+많은 클라이언트들(이용자들)이 하나의 웹 사이트에 접속해서 해당 서버의 트래픽이 늘어날 때 여러 대의 서버를 이용해서 요청을 처리하도록 한다. 각 서버의 부하량, 속도 저하 등을 고려해서 서버의 가중치, 스케줄링 등을 결정해 트래픽을 적절히 분산시키는 과정을 로드밸런싱이라고 한다.
+
+ 
+
+로드밸런싱의 장점?
+한 서버의 부하를 분산시킨다는 게 당연히 장점이 된다.
+
+값싼 비용으로 다수의 서버를 증설하여 관리할 수 있기 때문에 고가의 서버를 구매할 필요가 없다.
+
+1대의 서버가 멈춰도 서비스가 중단되지 않는다. 마찬가지로 서버를 늘리는 과정에서도 서비스가 중단되지 않는다.
+
+ 
+
+Nginx에서 제공하는 로드밸런싱 방법에 3가지가 있다.
+
+1. Round Robbin : 운영체제 스케줄링 방법에도 있는 방식이다. 주어진 서버들을 순차적으로 돌아가면서 선택하는 방법이다.
+
+2. Least-connected : 현재 접속자 수가 가장 적은 서버를 선택하는 방법이다.
+
+3. ip-hash : hash function을 사용해서 클라이언트 ip를 hash 한 결과에 따라서 다른 서버를 할당해주는 방법이다.
+
+ 
+
+ 
+
+API 란?
+API(Application Programming Interface)는 특정 서비스나 응용 프로그램에서 소스 코드를 공개하지 않고 요청한 기능을 제공하기 위해서 이용한다. 
+
+서버 API는 web 서버에 클라이언트가 어떠한 요청을 하였을 때 그에 맞는 응답을 줄 수 있는 endpoint를 Web을 통하여 노출한 것이다.
+
+예를 들어 http://12.34.56.78:8000/api/company 라는 endpoint에 서버와 연결된 데이터베이스에 있는 모든 회사의 주가정보를 json으로 반환하는 api를 열어놓았다면 사용자는 해당 endpoint를 요청하여 데이터를 json으로 받아올 수 있다.
+
+ 
+
+API의 역할
+
+모든 사람들이 서비스들의 고유 데이터베이스에 접근해서는 안된다.
+
+API는 이를 방지하기 위해서 서버와 데이터베이스에 대한 출입문 역할을 하며, 허용된 클라이언트, 서버에 대해서만 데이터를 넘겨준다.
+
+django-nginx로 api를 서버를 구축했다면 리버스 프록시인 nginx가 요청할 때만 django는 데이터를 넘겨주도록 해야 한다.
+API는 모든 접속을 표준화하기 때문에 클라이언트/운영체제와 상관없이 누구나 동일한 데이터를 얻을 수 있게 한다.
+
+ 
+
+ 
+
+REST API 란?
+API의 endpoint 아키텍처 스타일이다.
+
+HTTP 프로토콜을 사용
+
+ 
+
+ 
+
+ 
+
+ 
+
+nginx.conf
+nginx가 작동하는 방식을 결정하는 구성파일이다.
+
+docker에서 nginx이미지를 받고 컨테이너를 만들면 기본적으로 /etc/nginx/nginx.conf 에 위치한다.
+
+따라서 원하는 nginx.conf를 만들고 기본 위치에 있는 nginx.conf와 bind volume을 걸어서 사용하기도 한다.
+
+-> host에 있는 nginx.conf가 카피된다.
+
+nginx를 원하는대로 구동되게 하기위해서 nginx.conf에 있는 컨텍스트들을 살펴보자
+
+ 
+
+http
+ 
+
+ 
+
+events
+ 
+
+http
+ 
+
+upstream
+ 
+
+server
+listen
+ 
+
+include
+ 
+
+웹 서버의 라우팅
+location
+root
+
+alias
+
+index
+
+try_files
+
+proxy_pass
+
+allow
+
+deny
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+공부에 도움이 된 사이트들 ☆
+ 
+
+공식문서 Beginner's Guide
+ 
+Beginner’s Guide
+
+Beginner’s Guide This guide gives a basic introduction to nginx and describes some simple tasks that can be done with it. It is supposed that nginx is already installed on the reader’s machine. If it is not, see the Installing nginx page. This guide de
+
+nginx.org
+ 
+
+ 
+
+전반적인 Nginx 이해 #1
+ 
+[Nginx] Nginx 이해하기
+
+Nginx?  Nginx는 간단하게 말씀드리자면 경량 웹 서버입니다. 클라이언트로부터 요청을 받았을 때 요청에 맞는 정적 파일을 응답해주는 HTTP Web Server로 활용되기도 하고, Reverse Proxy Server로 활용하여
+
+icarus8050.tistory.com
+ 
+
+ 
+
+Web Server & WAS #1
+ 
+[Web] Web Server와 WAS의 차이와 웹 서비스 구조 - Heee's Development Blog
+
+Step by step goes a long way.
+
+gmlwjd9405.github.io
+ 
+
+ 
+
+Reverse Proxy, Forword Proxy 개념 #1
+ 
+포워드 프록시(forward proxy) 리버스 프록시(reverse proxy) 의 차이
+
+Web Server와 WAS 에 대해 연동하려면 Reverse Proxy 에 대한 이해가 필수입니다.
+
+www.lesstif.com
+ 
+
+ 
+
+root vs alias
+ 
+nginx: root vs alias
+
+발생일: 2015.01.02 키워드: nginx, root, alias 문제: `root` 디렉티브와 `alias` 디렉티브는 쓸 때마다 헷갈린다. 이참에 정리! 해결책: root: location 으로 넘어온 부분을 root로 설정한 경로에 추가한다. ali..
+
+ohgyun.com
+ 
+
+ 
+
+전반적인 Nginx 이해 #2
+ 
+NGINX에 대한 정리 #Upstream #Reverse Proxy #Proxy_pass
+
+오늘은 웹서버인 Nginx에 대해서 정리해 보도록 하겠습니다. 1. NGINX 의 용도 주로 NodeJS같은 웹 애플리케이션 앞에 배치되어 사용되어 지는 NGINX는 주로 어떻게 사용되어 지는 것 일까요? 개인적으
+
+developer88.tistory.com
+ 
+
+ 
+
+Nginx 라우팅
+ 
+TIL - nginx 라우팅에 대하여 알아보자
+
+nginx에서 default 파일을 사용한 서브 도메인 라우팅을 알 수 있습니다.
+
+velog.io
+ 
+
+ 
+
+HTTP 프로토콜
+ 
+프런트엔드 개발자가 알아야하는 HTTP 프로토콜 Part 1
+
+API 데이터 요청을 위해 꼭 알아야 하는 HTTP 프로토콜의 정의, HTTP Status Code, HTTP Methods 등
+
+joshua1988.github.io
+ 
+
+ 
+
+Reverse Proxy 개념 #2
+ 
+NGINX Reverse Proxy | NGINX Plus
+
+Have a 🍪? :) nginx.com uses cookies to provide functionality and performance. Privacy Policy.
+
+docs.nginx.com
+ 
+
+ 
+
+Reverse Proxy 개념 #3
+ 
+Nginx Reverse Proxy 사용하기
+
+호주로 해외여행을 간다고 생각해보자. 중국을 경유하여 가는 비행기 티켓을 구매했다. Proxy랑 엮어보면 인천공항은 출발지, 중국은 Proxy가 되며 호주가 실제 목적지가 된다. Proxy 서버란, 중계
+
+medium.com
+ 
+
+ 
+
+ 
+
+Nginx 로드 밸런싱 개념
+ 
+Nginx Load Balancing 로드 밸런싱이란?
+
+로드 밸런싱이란? 부하분산이라고 부르기도 하는 로드 밸런싱은 네트워크 기술의 일종이다. 하나의 웹 서비...
+
+blog.naver.com
+ 
+
+ 
+
+Django WAS
+ 
+[Django] 장고 웹서비스의-이해
+
+django 프로젝트 구성 장고를 이용해 웹서비스를 구성할 때 보통 다음과 같은 구조를 가진다고 합니다. 기본적으로 WSGI Web Application Server 하단 부분을 구현하게 되는데, 상단의 웹 서버와 웹 애플
+
+itmining.tistory.com
+ 
+
+ 
+
+Nginx Proxy 모듈
+ 
+[Nginx] 엔진엑스 프록시 모듈
+
+엔진엑스 기본 빌드에는 프록시 모듈이 포함돼 있어 클라이언트로부터의 HTTP 요청을 백엔드 서버에 전달합니다. 여러 관점에서 모듈환경을 설정해봅시다.  - 백엔드 서버의 기본 주소와 포트
+
+12bme.tistory.com
+ 
+
+ 
+
+API에 관해서
+ 
+API(애플리케이션 프로그래밍 인터페이스)란 - 개념, 기능, 장점
+
+API(애플리케이션 프로그래밍 인터페이스)란 애플리케이션 소프트웨어의 개발 및 통합에 사용되는 정의 및 프로토콜 세트를 뜻하며, 개발 민첩성과 간소화를 지원합니다.
+
+www.redhat.com
+ 
+
+ 
+
+#Network#nginx#web server
+
+좋아요3
+공유하기글 요소구독하기
+댓글 1
+댓글 쓰기
+프로필 이미지
+POBSIZ2021.08.08
+프록시 서버 이해가 부족했는데 완벽히 이해했습니다 감사합니다!😃😃😃
+댓글 컨트롤 레이어 펼침
+
+필명
+확인번호
+인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요.
+비밀글쓰기
+로딩 중
+이전글
+[백준 10217] KCM Travel (C++)
+2021. 8. 12. 21:54
+다음글
+[백준 15559] 내 선물을 받아줘 (C++)
+2021. 8. 13. 17:54
+이 블로그 인기 글
+
+[Docker] Nginx 웹서버 구동해보기
+I'm Henu
+
+[Mac] GitHub push token 오류 해결
+I'm Henu
+
+[Nginx] 웹 서버 Nginx 에 대해서...
+I'm Henu
+
+[Docker] 계획 + 공부를 위해 참고한 사이트 모음
+I'm Henu
+
+[백준 1786] 찾기 C++
+I'm Henu
+
+[백준 1602] 도망자 원숭이 C++
+I'm Henu

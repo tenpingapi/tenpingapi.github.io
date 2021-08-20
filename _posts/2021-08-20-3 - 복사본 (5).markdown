@@ -1,0 +1,156 @@
+---
+layout: post
+title:  "이더리움 클래식 (ETC) 시세 전망"
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그인
+블로그 홈화면
+프로필 이미지
+IT REVIEWER
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+Stocks
+이더리움 클래식 (ETC) 시세 전망
+IT REVIEWER IT REIVEWER
+2021. 6. 8. 12:05댓글수0공감수0
+이더리움 클래식 (ETC)의 가격은 5월 6일 급등하여 5월 5일 70 달러 수준에서 176 달러로 사상 최고치를 기록했습니다. 같은 날, 이더 (ETH)도 코인당 $3,500에 도달하는 기록을 세웠습니다. 그러나 이더 (ETH)가 5월 12일에 $4,362에 도달하면서 새로운 최고치를 기록하는 동안 이더리움 클래식(ETC)은 빠르게 가치가 하락하기 시작했습니다. 6월 4일까지 코인은 64달러에 거래되었습니다. 그렇다면 이더리움 블록체인에서 실행되는 이더 (ETH)와 이더리움 클래식 (ETC)의 차이점은 무엇인지, 또 2021년 지금까지 이더리움 클래식의 가치를 높이는 요인은 무엇인지와 함께 이번 포스팅에서 이더리움 클래식 (ETC) 전망에 대해 알아보겠습니다.
+
+ 
+
+
+Source: shutterstock
++이더리움 클래식 (ETC) 1분요약
+이더리움 블록체인은 Charles Hoskinson 및 Anthony Di Iorio와 함께 공동 설립자 Vitalik Buterin 및 Gavin Wood가 2년 동안 개발한 후 2015년에 시작되었습니다. 이더리움 클래식은 2016년 7월 이더리움 블록체인의 하드 포크에서 생성되었습니다. 이더리움 클래식은 해킹의 영향을 취소하기 위해 블록체인을 되돌리지 않았기 때문에 원래 블록체인의 연속입니다. 참가자들은 '코드는 법이다'라는 원칙을 고수했고, 현재 이더리움 블록체인은 분할에 의해 생성되었습니다.
+
+채굴 자와 거래소는 두 블록체인을 모두 지원하여 이더리움 클래식 (ETC) 레거시 네트워크가 ETC를 기본 코인으로 계속 사용할 수 있도록 했습니다. 이더리움 블록체인이 비트코인에서 사용하는 작업 증명 (PoW) 알고리즘에서 지분 증명 (PoS) 채굴 알고리즘으로의 전환을 포함하여 이더리움 2.0을 생성하기 위한 일련의 업데이트로 이동함에 따라 두 블록체인이 분기되었습니다.
+
+ 
+
+
+Source: Capital.com
+이더리움 클래식은 PoS로 전환할 계획이 없습니다. 이더리움 클래식에 대한 공식 개발 팀은 없지만 여러 개발 그룹이 오픈 소스 코드 업데이트를 작업하고 있습니다. 최근 공격은 생태계에 영향을 미쳐 Charles Hoskinson이 설립 한 블록체인 인프라 연구 및 엔지니어링 회사 IOHK가 Mantis 프로젝트를 시작하여 업그레이드를 시작하고 커뮤니티를 지원하도록 했습니다. 이더리움 클래식은 스마트 계약 네트워크로 작동하며 분산형 애플리케이션 (DApp)을 호스팅 할 수 있습니다.
+
+ETC 가격이 상승하면 채굴자가 블록을 확인하여 받는 보상이 증가하여 더 많은 채굴자가 네트워크에 가입하고 네트워크 보안을 강화하도록 장려합니다. 이더리움 클래식 블록체인의 활동이 감소함에 따라 공격에 더욱 취약 해졌습니다. 2019 년 1월, 51 % 공격으로 코인베이스 암호화폐 거래소에서 ETC에 100 만 달러의 이중 지출이 있었는데, 이는 한 단체 또는 집단이 네트워크의 51% 이상을 소유한 경우에만 발생할 수 있습니다. 코인베이스 및 기타 여러 거래소는 ETC 거래를 일시 중지했으며 이에 대응하여 가격이 하락했습니다.
+
+ 
+
+
+Source: The Crypto Sight
++이더리움 클래식 (ETC) 최고치 기록
+2016년 7월 블록체인이 분할되었을 때 이더리움 클래식 (ETC) 가격은 $2.08 였습니다. 가격은 2016년 11월에 $ 0.75로 하락하여 바닥을 쳤습니다. 그 후 상승 추세를 보이며 2017년 12월까지 46 달러에 도달했습니다. 이후의 폭락으로 가격은 2018년 12월까지 다시 $3.76으로 떨어졌습니다. 2019년 1월 51% 공격 이후 이더리움 클래식 (ETC)은 꾸준히 상승하여 6월까지 $9.33에 도달했다가 연말에 다시 $3.54로 떨어졌습니다. 가격은 2020년 2월에 $12.34로 올랐으며 이는 2018 년 이후 가장 높은 수준이었습니다. 암호화폐의 광범위한 매도는 2020년 3월에 $4.51로 하락했으며 ETC는 나머지 기간 동안 $ 4- $ 6 범위에서 거래되었습니다.
+
+최신 암호화 랠리와 이더리움 클래식 블록체인의 갱신된 개발 활동으로 인해 2021년 초부터 ETC 가격이 급격히 상승했습니다. Core-Geth 프로토콜 공급자의 긴급 업그레이드와 Mantis 클라이언트의 재출시로 인해 4월 26일 NOWPayments 암호화폐 결제 게이트웨이는 ETC를 추가했으며 개발자는 이더리움 클래식에서 대체 불가능한 토큰 (NFT)을 출시하기 시작했습니다.
+
+ 
+
+
+Source: Mantisclient.io
+ 
+
+이더리움 클래식 (ETC) 가격은 2월에 $16.90까지 올랐고 3월 말까지 $9.94에서 $14 사이에서 거래되었습니다. 가격은 4 월 17일에 $46.68로 급등했고 4월 25일에 $29.73으로 떨어졌다가 5월 4일에 $71.93을 기록했습니다. 가격 상승은 거기서 멈추지 않았고 5월 6일 이더리움 클래식 (ETC)은 176 달러의 새로운 기록을 세웠습니다. 그러나 역사적 고점에 도달한 후 ETC는 상승 모멘텀을 잃고 하락 추세를 보이기 시작하여 6월 4일에 $ 64까지 하락했습니다. 그러나 이 가격에서도 코인은 지금까지 여전히 1,026 % 상승했습니다. 
+
++이더리움 클래식 (ETC) 시세
+
+오늘 실시간 이더리움 클래식 (ETC) 가격은 $55.73 USD이며 24시간 거래량은 $2,940,930,903 USD입니다. Ethereum Classic은 지난 24 시간 동안 13.88 % 하락했습니다. 현재 CoinMarketCap 순위는 21 위이며 라이브 시가 총액은 $ 6,481,979,984 USD입니다. 현재 유통량은 116,313,299 ETC이며 최대입니다. 
+
+ 
+
+
+Source: COinMarketCap
+ 
+
++이더리움 클래식 (ETC) 전망 : 랠리 지속 가능할까?
+CoinCodex의 단기 기술적 분석은 이더리움 클래식 (ETC) 가격에 대해 약세를 나타냅니다. 급격한 ETC 가격 하락은 가장 가까운 단기 기술 지원 수준인 $67.38 아래로 이동했으며 저항선은 $72.42에 가깝고 $77.47까지 올라갈 가능성이 있음을 나타냅니다.
+
+ 
+
+WalletInvestor.com
+
+ 
+Ethereum Classic Price Prediction: up to $87.382! - ETC to USD Forecast 2021, Long-Term & Short-Term Price Prognosis
+
+Ethereum Classic Price Prediction 2021, ETC Price Forecast. The smartest Short- & Long-Term Ethereum Classic price analysis for 2021, 2022, 2023, 2024, 2025, 2026 with daily USD to ETC prognosis: monthly and daily opening, closing, maximum and minimum pric
+
+walletinvestor.com
+ 
+
+장기적인 전망을 위해 알고리즘 기반 예측 사이트인 Wallet Investor의 ETC 코인 예측은 7 월과 8 월에 62 달러 수준을 돌파한 후 2021 년 말 70 달러로 상승했습니다. 암호 화폐는 2022 년 12 월까지 $ 88에서 거래되고 2025 년 말까지 $ 149까지 상승할 것으로 예측합니다.
+
+ 
+
+
+Source: Walletinvestor
+DigitalCoinPrice
+
+ 
+Ethereum Classic (ETC) Price, Chart & Market Cap | DigitalCoinPrice
+
+Get the Ethereum Classic price live now - ETC price is down by -14.07% today. (ETC/USD), stock, chart, prediction, exchange, candlestick chart, coin market cap, historical data/chart, volume, supply, value, rate & other info.
+
+digitalcoinprice.com
+Digitalcoin은 훨씬 더 낙관적입니다. ETC 가격은 2021 년 평균 98 달러로 계속 상승 할 것으로 예상합니다. ETC는 가격이 2021 년 평균에서 두 배가되어 2025 년까지 190 달러 에이를 것으로 예상합니다. 장기적으로 코인의 가치는 2028 년 평균 284 달러로 예상됩니다.
+
+ 
+
+
+Source: digitalcoinprice
+ 
+
+govcapital
+
+ 
+Ethereum Classic (ETC) price prediction is 76.424623 USD. The price forecast is 76.424623 USD for 2022 June 08, Wednesday; and 1
+
+Ethereum Classic (ETC) price prediction is 76.424623 USD. The price forecast is 76.424623 USD for 2022 June 08, Wednesday; and 170.566 USD for 2026 June 08, Monday with technical analysis.
+
+gov.capital
+Gov Capital의 ETC 예측에 따르면 가격은 2021 년 12 월 64 달러, 2022 년 12 월 78 달러, 2025 년 12 월 148 달러로 상승했습니다.
+
+ 
+
+LongForcast
+
+ 
+Ethereum Classic Price Prediction 2021, 2022, 2023, 2024 - Long Forecast
+
+Ethereum Classic price equal to 58.1181 Dollars a coin. Today's range: $56.5900 - $58.8288. The previous day close: $57.6200. The change was +0.4981, +0.86%. Inverse rate: USD to ETC. Ethereum Classic price prediction for June 2021. In the beginning price
+
+longforecast.com
+Long Forecast의 이더리움 클래식 (ETC) 선물 가격에 대한 예측은 앞으로 더 많은 변동성을 예상합니다. 가격은 2021 년에 $ 86.9로 상승한 다음 2022 년 11 월까지 $ 51.8까지 하락한 후 2023 년 1 월에는 $ 68.5까지 하락할 것으로 예상합니다. 이 사이트는 ETC가 2023 년 말까지 $ 65에서 거래되어 $ 28.9까지 하락할 것으로 예상합니다.
+
+ 
+
++당신을 위한 맞춤 콘텐츠
+#이더리움#이더리움 클래식#이더리움 클래식 가격#이더리움 클래식 시세#이더리움 클래식 전망#이더리움 클래식 최고가#이더리움 클래식 하드포크#이더리움 클래식 호재#이클#이클 전망
+
+좋아요공감
+공유하기글 요소구독하기
+저작자표시비영리변경금지
+첫 댓글을 남겨보세요
+로딩 중
+이전글
+이 세가지 코인 꼭 투자하세요 !
+2021. 6. 4. 12:03
+다음글
+AMC Entertainment 주가 전망
+2021. 6. 9. 12:21
+이 블로그 인기 글
+
+리플 (XRP) 소송 결과
+IT REVIEWER IT REIVEWER
+
+이더리움 클래식 (ETC) 시세 전망
+IT REVIEWER IT REIVEWER
+
+리플 (XRP) 소송 결과 전망
+IT REVIEWER IT REIVEWER
+
+도지코인 (DOGE) 시세 전망
+IT REVIEWER IT REIVEWER
+
+파이코인 (PI) 상장 ?
+IT REVIEWER IT REIVEWER
+
+도지코인 (DOGE) 시세 전망 : 지폐 달성 ?
+IT REVIEWER IT REIVEWER
