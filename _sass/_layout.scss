@@ -63,12 +63,11 @@
  */
  #article {
     @include media-query-min($on-screen) {
-        padding-bottom: 4em;
+        
     }
  }
 
 .page-content {
-    padding-top: $spacing-unit;
     @include media-query-max($on-screen) {
         background-color: $background-color-white;
         padding-bottom: 3em;
