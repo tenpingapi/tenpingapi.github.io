@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "[Spring boot] This application has no explicit mapping for /error, so you are seeing this as a fallback."
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그아웃
+블로그 홈화면
+프로필 이미지
+부자아빠이야기
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+IT 개발/Spring
+[Spring boot] This application has no explicit mapping for /error, so you are seeing this as a fallback.
+친절한 0\^^/0
+2021. 3. 30. 18:55댓글수1공감수1
+내부 톰캣 서버를 실행하는 진입점이라고 할 수 있는 @SpringBootApplication를 작성한 클래스는 패키지의 최상단 혹은 동일한 레벨에 위치해야 합니다. @SpringBootApplication은 여러가지 어노테이션 기능을 합친 어노테이션입니다. 그 중 하나가 @ComponentScan입니다. 이 어노테이션의 기능은 현재 위치에서 시작해 서브 패키지를 훑으면서 클래스를 스캔합니다. 엉뚱한 패키지에 작성하면 컨트롤러를 못 찾기 때문에 404 에러가 발생하죠.
+
+ 
+
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+Tue Mar 30 18:24:57 KST 2021
+
+There was an unexpected error (type=Not Found, status=404).
+
+ 
+
+
+에러원인
+
+Component Scan을 하지 못해서.
+
+ 
+
+해결방법
+
+Application main() 클래스의 하위 디렉토리 안에 Component(Controller)가 있어야 한다.
+
+또는 @ComponentScan({"com.ygdad"}) 와 같이 스캔할 패키지를 지정해 준다.
+
+ 
+
+패키지의 최상단이라는 의미는 다음과 같습니다. 컨트롤러 클래스가 com.web.controller 패키지에 있다면 메인 메소드가 있는 클래스는 com.web이나 com 패키지에 있어야 합니다. com.web.project에 있다거나 com.ygdad에 있으면 안 됩니다. 같은 계층 구조 안에 있어야 합니다.
+
+#This application has no explicit mapping for /error
+
+좋아요1
+공유하기글 요소구독하기
+저작자표시
+댓글 1
+댓글 쓰기
+프로필 이미지
+임인혁2021.06.04
+대박사건.. 이래서 안됬구나
+댓글 컨트롤 레이어 펼침
+
+인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요.
+비밀글쓰기
+로딩 중
+이전글
+Git에서 특정 파일 제외, 무시 하기
+2021. 3. 30. 15:20
+다음글
+intellij 파일 내용 텍스트 일괄 변경하는 방법
+2021. 3. 31. 17:57
+이 블로그 인기 글
+
+[Spring boot] This application has no explicit mapping for /error, so you are seeing this as a fallback.
+친절한 0\^^/0
+
+국군복지단 대방마트 A to Z
+친절한 0\^^/0
+
+디카르고 코인 쿠팡 호재와 앞으로 전망
+친절한 0\^^/0
+
+키스마크 남기는 법, 가리는 법 알려드림
+친절한 0\^^/0
+
+교보문고 재고확인 영업점별 수량확인 한방에 하는 방법
+친절한 0\^^/0
+
+역전할맥 '살얼음맥주' 그대로 즐길수 있는 캔맥주 출시
+친절한 0\^^/0
