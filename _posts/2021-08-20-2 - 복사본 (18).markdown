@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "4기가USB Windows10 부팅USB ISO파일 공유해드림"
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그인
+블로그 홈화면
+프로필 이미지
+공유 블로그
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+OS/WINDOWS
+4기가USB Windows10 부팅USB ISO파일 공유해드림
+공유해드림
+2020. 8. 4. 09:51댓글수0공감수12
+정말 집에 널리고 널린 게 4기가 USB이라 시작하게 되었습니다.
+
+ 
+
+4기가까지만 작동하며 4기가 미만는 넣을수가 없습니다.(용량 확인 후 넣으시면 됩니다.)
+
+
+ 
+
+사용방법은 부팅 USB 만들기 검색후 따라 하시면 됩니다.
+
+ 
+
+rufus-3.1.exe
+0.97MB
+ 
+
+ISO 파일 링크는
+
+4기가 USB Windows10 부팅 USB ISO 파일 다운로드
+
+ 
+4기가USB Windows10 부팅USB ISO파일 - Google 드라이브
+
+ 
+
+drive.google.com
+입니다.
+
+ 
+
+[ 참고 :Windows깔끔하게 설치방법(파티션 자동 생성X)]
+
+ 
+Windows OS 파티션 자동 생성 없이 만들기(예약 파티션 생성X)
+
+일단 부팅 USB 만드시고 https://www.microsoft.com/ko-kr/software-download/windows10 windows 10 부팅디스크 만들기 만드는 방법은 많이 나와있으니까 생략하겠습니다. -------------------------------------..
+
+all-share-source-code.tistory.com
+ 
+
+모두 설치가 되었으면 
+
+
+위 그림 또는 (위 그림처럼 안 나올 수 있습니다.)
+
+ 
+
+https://www.microsoft.com/ko-kr/software-download/windows10
+
+
+다운로드 후 업데이트
+
+ 
+
+업데이트 진행하면 끝
+
+ 
+
+추가 내용[다른 버전 사용하실 분들]
+더보기
+
+좋아요12
+공유하기글 요소구독하기
+첫 댓글을 남겨보세요
+로딩 중
+이전글
+Windows 포맷후 전에 깔려있는 프로그램들 한번에 자동 설치 방법 {업데이트중...}
+2020. 7. 30. 17:23
+다음글
+Android Studio 0xc000007b 해결방법
+2020. 10. 13. 23:32
+이 블로그 인기 글
+
+4기가USB Windows10 부팅USB ISO파일 공유해드림
+공유해드림
+
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+공유해드림
+
+NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+공유해드림
+
+Windows 포맷후 전에 깔려있는 프로그램들 한번에 자동 설치 방법 {업데이트중...}
+공유해드림
+
+여러 하드 있을때 유용하게 사용하는 방법(Program Files등 다른 하드에 연결)
+공유해드림
+
+VSCode Remote-SSH 초간단 사용방법(우분투 SSH 자동 설치 포함!)
+공유해드림

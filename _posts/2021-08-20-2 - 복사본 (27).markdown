@@ -1,0 +1,184 @@
+---
+layout: post
+title:  "[Mac] GitHub push token 오류 해결"
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그인
+블로그 홈화면
+프로필 이미지
+개발냥발
+공지
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+Mac
+[Mac] GitHub push token 오류 해결
+I'm Henu
+2021. 7. 29. 05:36댓글수2공감수3
+Github 오류
+
+ 
+
+7.29일 새벽 갑자기 git push가 안 되는 현상을 겪었다.
+
+오류의 첫 줄이 무슨 말이냐면
+
+Password 인증방식이 일시적으로 brownout(shutdown?)되었다. Password 대신에 personal access token을 사용해주세요.
+
+ 
+
+깃허브에서 일시적으로 Password 인증 방식에 오류가 생긴 듯하다. 잠시 기다리면 해결될 수도 있겠지만 나는 바로 push를 해야 할 상황이었기 때문에 직접적으로 해결했다.
+
+ 
+
+왜 Mac만 오류가 난거지???
+
+ 
+
+ 
+
+
+ 
+
+2021 중반부터 인증에 token이 사용될거라는 github의 공지..
+
+personal access token을 사용하게 될 거라고 한다. 오류에서는 temporarily라고 했으면서..
+
+인증 방식을 바꾸면서 이미 예정되어있었던 오류인 것 같다.
+
+ 
+
+문제를 해결해보자
+ 
+
+1. 깃허브에서 Settings 클릭
+
+ 
+
+ 
+
+2.  Developer settings 클릭
+
+ 
+
+ 
+
+3. Personal access tokens 클릭
+ 
+
+
+ 
+
+ 
+
+4. Generate new token 클릭
+
+ 
+ 
+
+5. Token 설정
+ 
+
+
+
+
+ 
+
+나는 터미널에서 login하고 주로 repo를 관리할 것이기 때문에 repo에 관한 권한을 모두 체크해주었다.
+
+그리고 Generate token  을 클릭!
+
+ 
+
+토큰이 하나 만들어졌을 것이다.
+
+창을 나가지말고 토큰을 복사하자!
+
+ 
+
+ 
+
+Mac KeyChain 삭제
+command + space를 누르고 keychain 을 검색하자
+
+
+요놈을 클릭
+
+ 
+
+
+ 
+
+github를 검색하고 보이는 github.com을 우클릭해서 삭제한다. 키체인이 '로그인'이라고 된 항목을 삭제하면 된다.
+
+ 
+
+ 
+
+터미널에서 user정보 입력
+$ git config --global user.name "username"
+$ git config --global user.email "email@email.com"
+email을 반드시 github에 등록된 email로 입력을 해야 commit내역이 올라간다. (잔디심기)
+
+ 
+
+ 
+
+마무리
+git commit 후 git push를 하면 
+
+$ Username for https://github.com : 
+$ Password for https://github.com/hyun98 :
+Username 부분에는 자신의 아이디를 적으면 되고
+
+Password 부분에는 아까 만들었던 Personal access token을 복사해서 입력해준다
+
+ 
+
+그럼 push가 정상적으로 됨을 확인할 수 있을 것이다!!
+
+#Git#GitHub#push error#Token
+
+좋아요3
+공유하기글 요소구독하기
+댓글 2
+댓글 쓰기
+프로필 이미지
+Heo DA2021.07.30
+호오 이런건 처음 보네 신기하다이
+댓글 컨트롤 레이어 펼침
+프로필 이미지
+Henu2021.07.30
+갑자기 맥쓰는 사람들 깃허브 오류떴다고 하더라구요..
+댓글 컨트롤 레이어 펼침
+
+필명
+확인번호
+인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요.
+비밀글쓰기
+로딩 중
+이전글
+[백준 1305] 광고 C++
+2021. 7. 28. 00:26
+다음글
+[Docker] MariaDB - docker로 관리하기
+2021. 7. 29. 19:21
+이 블로그 인기 글
+
+[Docker] Nginx 웹서버 구동해보기
+I'm Henu
+
+[Mac] GitHub push token 오류 해결
+I'm Henu
+
+[Nginx] 웹 서버 Nginx 에 대해서...
+I'm Henu
+
+[Docker] 계획 + 공부를 위해 참고한 사이트 모음
+I'm Henu
+
+[백준 1786] 찾기 C++
+I'm Henu
+
+[백준 1602] 도망자 원숭이 C++
+I'm Henu

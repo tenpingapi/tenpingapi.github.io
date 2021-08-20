@@ -1,0 +1,142 @@
+---
+layout: post
+title:  "vscode 확장 프로그램 중 Open 안 먹힐 시(에러 해결 방법)"
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+
+공유 블로그
+vscode 확장 프로그램 중 Open 안 먹힐 시(에러 해결 방법)
+IDE/VSCode 2021. 6. 28. 15:09
+open 확장자를 설치하고 난후
+
+ 
+
+
+ 
+
+open with default application를 클릭해보지만 오류 메세지만 나올경우
+
+utf-8로 적용이 안되어있어 오류가 날수 있습니다.(또는 프로그램이 설치가 안되어 있을수 있음)
+
+ 
+
+설정방법은 간단합니다.
+
+
+.editorconfig파일 생성합니다.
+
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+파일안에 내용 복붙하고 재부팅 하시면 되겠습니다.
+
+ 
+
+ 
+
+--- 추가내용 ---
+
+더보기
+ 
+
+
+좋아요공감
+공유하기글 요소구독하기
+공유하기
+facebook twitter kakaoTalk kakaostory naver band
+'IDE/VSCode' 의 관련글
+Windows 10 관리자 권한 VSCode 드래그&드랍 방법
+2021.06.23
+더보기
+VSCode Remote-SSH 초간단 사용방법(우분투 SSH 자동 설치 포함!)
+2021.01.02
+더보기
+ 0
+댓글
+이름
+
+비밀번호
+
+http://
+
+비밀글 모드
+인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 
+댓글 작성 시 타인에 대한 배려와 책임을 담아주세요. 
+
+(참고 : 이미지 업로드는 아래 댓글로 남겨주시면 됩니다~)
+
+
+◀ 1 2 3 ▶
+프로필
+공유해드림
+
+'공유해드림' 블로그를 찾아주신 모든 분들께 감사드리며, 궁금한 사항있으면 댓글또는 아래 카톡모양으로 남겨주시면됩니다~
+행복한 하루 되세요~
+
+「'1920x1080' 해상도에 최적화 되어 있습니다.」
+
+링크  ('Ctrl'키 누른상태 클릭시 새창)
+SEARCH CODE COLORS
+디자인 코드 색
+자동 정규화식
+HTML Design(YouTube)
+HTML Design(Web Site[로그인 필수!!])
+코딩테스트 도움이 될만한 자료1
+코딩테스트 도움이 될만한 자료2
+API와 SDK차이
+웹 코드실행(자동완성 가능![로그인 필수])
+웹 코드실행 사이트들
+IP 위치확인
+CPU 순위 사이트
+VGA 순위 사이트
+내 패스워드는 언제까지 안전할까?
+코딩 분석 대회 사이트
+Windows 기본 아이콘 위치들
+추천글
+ 삼성 덱스 PC와 무선으로 사용 방법
+ Win10 관리자권한 VSCode 드래그&드랍
+카테고리
+분류 전체보기(34)
+ IDE(5)
+ Android Studio(2)
+ VSCode(3)
+ OS(15)
+ WINDOWS(10)
+ Linux, Unix(4)
+ DB(2)
+ MYSQL(2)
+ Git(1)
+ Project(11)
+ Arduino(1)
+ Android(2)
+ Python(7)
+ NodeJS(0)
+ Python to NodeJS(1)
+인기글
+4기가USB Windows10 부팅USB ISO파일 공유해드림
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+Windows 포맷후 전에 깔려있는 프로그램들 한번에 자동 설치 방법 {업데이트중...}
+여러 하드 있을때 유용하게 사용하는 방법(Program Files등 다른 하드에 연결)
+최근글
+Windows10 VSCode 주석 단축키 안먹힐시[제거 방법 포함]([Ctrl + /] 안먹힐시)
+여러개 레지스트리 편집기 켜기(regedit여러개 열기 해결 방법)
+Microsoft Store 모든 앱 초기화(오류 해결방법)
+windows 10 시간 날짜 형식 변경 방법
+삼성 덱스 PC와 무선으로 사용 방법 100% 보장&인터넷 연결 안해도 됨!!(Samsung DeX PC와 무선)
+방문자 그래프
+08-20 18:40
+Copyright © 공유해드림. All Right Reserved.
+
+Copyleft © 친절한효자손(친효스킨 v2.3)
+

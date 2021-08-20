@@ -1,0 +1,146 @@
+---
+layout: post
+title:  "NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정"
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그인
+블로그 홈화면
+프로필 이미지
+공유 블로그
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+OS/Linux, Unix
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+공유해드림
+2021. 1. 1. 02:55댓글수0공감수11
+Jetson Nano의 JetPack4.4.1(2020 하반기 [Ubuntu 18.04])으로 VNC 연결 진행하였습니다.
+
+ 
+
+저번 블로그에서 
+
+ 
+
+NVIDIA 젯슨 나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+
+ 
+NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+
+현시점 Jetson Nano의 JetPack4.4.1(2020 하단기 최신[Ubuntu 18.04]) XRDP 로고만 뜨고 튕기는 문제 점 있습니다.. 긴급히 문제점 해결하여 바로 올려 봅니다. 기본적으로 xfce4 설치를 진행해줍니다. sudo ap..
+
+all-share-source-code.tistory.com
+ 
+
+에 대해서 알아보았지만 영 시원치 않은 원격 방식이었습니다..
+
+(쓰다 보면 안 되는 것이 많았습니다...)
+
+ 
+
+이번에는 더 확실한 원격 방법인 VNC로 해보도록 하겠습니다.
+
+ 
+
+무조건 root계정이 아닌 걸로 진행해 주세요!!
+
+(VNC자체가 계정이 로그인된 상태에서 제어를 하게 됩니다. 따라서 GUI 구성이 되어 있는 계정으로 진행해 주세요)
+
+ 
+
+지금은 SSH는 열려있어서 SSH로 VSCode에서 진행하도록 하겠습니다.
+
+VSCode SSH 사용법
+더보기
+ 
+
+ 
+
+
+터미널 창에 아래와 같이 코드 입력해 주세요.
+
+터미널 진행하실 때 무조건 GUI 구성이 되는 계정으로 진행해 주세요.(root계정 안됨)
+
+mkdir -p ~/.config/autostart
+cp /usr/share/applications/vino-server.desktop ~/.config/autostart/.
+gsettings set org.gnome.Vino prompt-enabled false
+gsettings set org.gnome.Vino require-encryption false
+
+gsettings set org.gnome.Vino authentication-methods "['vnc']"
+gsettings set org.gnome.Vino vnc-password $(echo -n '원하는 패스워드 입력'|base64)
+
+sudo reboot
+출처 : https://developer.nvidia.com/embedded/learn/tutorials/vnc-setup
+
+꼭 VSCode 아니고 실제 터미널에서 진행하셔도 됩니다.
+
+ 
+
+입력하면 재시작됩니다
+
+재시작된 후 로그인해주세요
+
+ 
+
+로그인을 하면 
+
+
+tcping으로 포트 살아있는지 테스트중...(tcping : https://all-share-source-code.tistory.com/8)
+VNC포트가 정상적으로 열린 것을 확인할 수 있습니다
+
+ 
+
+
+ 
+
+그리고 VNC를 켜면 패스워드 입력하라고 나오는데
+
+이건 계정 패스워드가 아닌 터미널에서 입력한 패스워드를 입력하시면 됩니다.
+
+ 
+
+확인
+
+
+그럼 연결이 성공적으로 됩니다!!
+
+ 
+
+기본적으로는 SSH로 vscode의 Remote 하시거나 PuTTY 사용하시고 가끔 VNC 필요할 때가 있으니 그때 잠깐 사용하면 될 거 같습니다.
+
+ 
+
+--- 추가 내용(가상 디스플레이 해상도 설정) ---
+더보기
+ 
+
+
+좋아요11
+공유하기글 요소구독하기
+첫 댓글을 남겨보세요
+로딩 중
+이전글
+AWS EC2 Ubuntu RDP(원격데스크톱) 연결하기
+2020. 12. 30. 22:07
+다음글
+VSCode Remote-SSH 초간단 사용방법(우분투 SSH 자동 설치 포함!)
+2021. 1. 2. 21:01
+이 블로그 인기 글
+
+4기가USB Windows10 부팅USB ISO파일 공유해드림
+공유해드림
+
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+공유해드림
+
+NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+공유해드림
+
+Windows 포맷후 전에 깔려있는 프로그램들 한번에 자동 설치 방법 {업데이트중...}
+공유해드림
+
+여러 하드 있을때 유용하게 사용하는 방법(Program Files등 다른 하드에 연결)
+공유해드림
+
+VSCode Remote-SSH 초간단 사용방법(우분투 SSH 자동 설치 포함!)
+공유해드림

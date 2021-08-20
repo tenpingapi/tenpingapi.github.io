@@ -1,0 +1,119 @@
+---
+layout: post
+title:  "NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법"
+date:   2021-08-20 22:17:10 +0800
+categories: jekyll update
+---
+티스토리 메뉴 펼치기검색로그인
+블로그 홈화면
+프로필 이미지
+공유 블로그
+방명록
+글쓰기, 알림, 통계 확인은 티스토리앱에서
+OS/Linux, Unix
+NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+공유해드림
+2020. 12. 19. 02:35댓글수0공감수11
+Jetson Nano의 JetPack4.4.1(2020 하반기 [Ubuntu 18.04]) XRDP 로고만 뜨고 튕기는 문제 점 있습니다..
+
+ 
+
+긴급히 문제점 해결하여 바로 올려 봅니다.
+
+ 
+
+기본적으로 xfce4 설치를 진행해줍니다.
+
+sudo apt install xfce4
+
+sudo nano  /etc/xrdp/startwm.sh
+----------
+
+내용 생략...
+
+(마지막에 두줄 주석)
+
+#test -x /etc/X11/Xsession && exec /etc/X11/Xsession 
+#exec /bin/sh /etc/X11/Xsession 
+
+(아래 내용 추가)
+startxfce4
+---------
+
+내용 저장 후 터미널 창에서
+
+sudo service xrdp restart
+ 
+
+출처 : https://forums.developer.nvidia.com/t/issue-with-xrdp/110654/23
+
+ 
+
+연결 확인
+더보기
+ 
+
+ 
+
+추가 내용!!
+더보기
+ 
+
+빨리 버그가 해결되었으면 합니다..
+
+아마 내년 21년 1월 JetPack 4.5 출시하면 버그 해결되지 않을까 쉽네요..
+
+참고 : https://developer.nvidia.com/embedded/jetpack
+
+ 
+
+ 
+
+아래 링크는 
+
+더 나은 NVIDIA 젯슨 나노(Jetson Nano)의 원격 제어인 VNC로 구성하였습니다.
+
+NVIDIA 젯슨 나노(Jetson Nano) VNC는 NVIDIA에 제공하고 있으면 확실이 XRDP보다는 좋습니다.
+
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+
+ 
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+
+Jetson Nano의 JetPack4.4.1(2020 하반기 [Ubuntu 18.04])으로 VNC 연결 진행하였습니다. 저번 블로그에서 NVIDIA 젯슨 나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법 https://all-share-source-code.tistory...
+
+all-share-source-code.tistory.com
+ 
+
+ 
+
+
+좋아요11
+공유하기글 요소구독하기
+첫 댓글을 남겨보세요
+로딩 중
+이전글
+파이썬 Google 이미지 크롤링
+2020. 12. 18. 00:05
+다음글
+AWS EC2 Ubuntu RDP(원격데스크톱) 연결하기
+2020. 12. 30. 22:07
+이 블로그 인기 글
+
+4기가USB Windows10 부팅USB ISO파일 공유해드림
+공유해드림
+
+NVIDIA 젯슨나노(Jetson Nano) VNC 연결&가상 디스플레이 설정
+공유해드림
+
+NVIDIA 젯슨나노(Jetson Nano) XRDP 로고 튕김 오류 해결 방법
+공유해드림
+
+Windows 포맷후 전에 깔려있는 프로그램들 한번에 자동 설치 방법 {업데이트중...}
+공유해드림
+
+여러 하드 있을때 유용하게 사용하는 방법(Program Files등 다른 하드에 연결)
+공유해드림
+
+VSCode Remote-SSH 초간단 사용방법(우분투 SSH 자동 설치 포함!)
+공유해드림
