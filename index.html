@@ -4,10 +4,8 @@ layout: default
 
 <style>
 iframe {margin:0 !important}
+.embed-footer ng-scope {display:none}
 </style>
-
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-<div class="post-content" itemprop="articleList">
 
 	<form style='padding:0;margin:0;' action="{{ page.url }}" method="get">
 		<input type="text" placeholder="검색" name="q" style="margin:5px 0 0;outline:none;width:100%;height:45px;border:0;box-sizing:border-box;padding:10px" required size="50" maxlength="255">
@@ -26,6 +24,3 @@ if ( window.location.pathname == '{{ page.url }}' ) {
 </script>
 
 <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script>
-
-</div>
-</article>
