@@ -73,6 +73,7 @@ c {display:none}
     @include media-query-max($on-screen) {
         background-color: $background-color-white;
 	min-height:100vh;
+	padding: 60px 0;
     }
     @include media-query-min($on-screen) {
         .wrapper {
