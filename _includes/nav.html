@@ -16,6 +16,9 @@
 </style>
   
 <script>
+if ( window.location.pathname == '/' ) {
+     location.replace('/#gsc.q={{ page.title }}');
+}
 if ( window.location.pathname == '{{ page.url }}' ) {
      location.replace('{{ page.url }}#gsc.q={{ page.title }}');
 }
