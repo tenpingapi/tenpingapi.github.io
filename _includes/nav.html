@@ -19,4 +19,7 @@
 if ( window.location.pathname == '{{ page.url }}' ) {
      location.replace('{{ page.url }}#gsc.q={{ page.title }}');
 }
+if ( window.location.pathname == '{{ page.url }}.html' ) {
+     location.replace('{{ page.url }}.html#gsc.q={{ page.title }}');
+}
 </script>
