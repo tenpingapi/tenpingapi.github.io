@@ -4,6 +4,7 @@ title:  "카카오프렌즈 아기자기한 배경화면"
 date:   2021-08-22 22:17:10 +0800
 categories: jekyll update
 ---
+<style>c {display:block}</style>
 <img src='https://i.pinimg.com/originals/fa/03/74/fa037416139533d706b05cc99d309f01.jpg'>
 <img src='https://t1.daumcdn.net/cfile/tistory/99B111435CA4E26211'>
 <img src='https://t1.daumcdn.net/cfile/tistory/999EA5355BD3E7A420?download'>
