@@ -1,0 +1,58 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{% if page.title %}{{ page.title | escape_once }}{% else %}{{ site.title | escape_once }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="naver-site-verification" content="1310c5d0daa785f8365cd37d0e1ece05cc839e9a" />
+
+  {% seo %}
+</head>
+
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "f1504cfbcac548";
+if(window.wcs) {
+  wcs_do();
+}
+</script>
+
+	<style>
+
+@font-face {
+    font-family: 'a';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+	
+	* {font-family: 'a';color:#000;text-decoration:none}
+
+	html {background:url('https://blog.kakaocdn.net/dn/bnUtv5/btqDvgSRHKx/9x5toEXSTwjhzWXC9ZC31K/img.jpg');background-attachment:fixed;background-size:cover;background-position:center;background-repeat:no-repeat}
+	body {width:80%;min-height:100vh;margin:0 auto;padding:15px;box-sizing:border-box;background:#fff}
+	img {width:100%}
+	c {display:none}
+
+	.embed-footer {display:none}
+
+@media (max-width:1024px) {
+body {width:90%}
+}
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+  }
+  ::-webkit-scrollbar-track {
+    background: #eee;
+  }
+
+	</style>
+
+<body>
