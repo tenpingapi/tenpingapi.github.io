@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<style>
+span a {font-size:13px}
+iframe {margin:0 !important}
+</style>
+
+<b><a href='/'>실시간 미국 주식</a></b><br><span>
+<a href='/?q=AAPL'>#애플</a> <a href='/?q=MSFT'>#마이크로소프트</a> <a href='/?q=302440'>#SK바이오사이언스</a> <a href='/?q=005930'>#삼성전자</a> <a href='/?q=323410'>#카카오뱅크</a> <a href='/?q=035720'>#카카오</a> <a href='/?q=XLF'>#XLF</a> <a href='/?q=GDXD'>#GDXD</a><br>
+</span>
+	<form style='padding:0;margin:0' action="{{ page.url }}" method="get">
+		<input type="text" placeholder="실시간 미국 주식 (코드)" name="q" style="outline:none;width:100%;padding:30px !important;height:45px;border:0;box-sizing:border-box" required size="50" maxlength="255">
+	</form>
+
+
+<style>
+.gsc-above-wrapper-area {display:none}
+.gs-result .gs-image, .gs-result .gs-promotion-image {border:0 !important;height:60px !important}
+.gsc-control-cse {padding:0 !important}
+
+#b {position:relative;bottom:30px;left:20px;color:#fff;font-size:15px}
+@media (max-width:1024px) {
+}
+
+.embed-footer, ng-include, .fe_title {display:none !important}
+
+</style>
+
+<script>
+	function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var uid = getParameterByName('q').toUpperCase();
+
+document.write("\
+<iframe src=\"https://s.tradingview.com/mediumwidgetembed/?symbols="+uid+"&locale=kr&trendLineColor=%232962FF&underLineBottomColor=rgba(41%2C%2098%2C%20255%2C%200)&underLineColor=rgba(41%2C%2098%2C%20255%2C%200.3)&fontColor=%23787B86&gridLineColor=rgba(240%2C%20243%2C%20250%2C%200)&width=100%25&height=400px&colorTheme=light&utm_source=aelw.github.io&utm_medium=widget&utm_campaign=symbol-overview\n\
+\" style='height:300px;width:100%;border:0'></iframe>");
+
+document.write("\
+<iframe width=\"100%\" height=\"350\" src=\"https://s.tradingview.com/widgetembed/?frameElementId=tradingview_373ee&symbol="+uid+"&interval=5&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&theme=light&style=1&timezone=Etc%2FUTC&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=kr&utm_source=http://stock.1002.pw&utm_medium=widget&utm_campaign=chart&utm_term=AAPL\" frameborder=\"0\"></iframe>");
+
+document.write("\
+<iframe src='https://s.tradingview.com/embed-widget/financials/?locale=kr#%7B%22symbol%22%3A%22"+uid+"%22%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Afalse%2C%22largeChartUrl%22%3A%22%22%2C%22displayMode%22%3A%22regular%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22utm_source%22%3A%22swww.tistory.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22financials%22%7D' style='width:100%;height:600px;border:0'></iframe>");
+
+document.write("\
+<iframe src='https://s.tradingview.com/embed-widget/symbol-profile/?locale=kr&symbol=NASDAQ%3A"+uid+"#%7B%22width%22%3A480%2C%22height%22%3A650%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Afalse%2C%22utm_source%22%3A%22swww.tistory.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22symbol-profile%22%7D' style='width:100%;height:300px;border:0'></iframe>");
+</script>
+
+<div style='padding:25px;border:1px solid #ccc;margin:3px 0'>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://silsigan-migug-jusig.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//silsigan-migug-jusig.disqus.com/count.js" async></script>
+</span></div>
+
+<script async src="https://cse.google.com/cse.js?cx=005250040578232720626:s9msn9p8y_a"></script>
+<div class="gcse-searchresults-only"></div>
+
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
+
+<span>
+<a href='/blog/48'><div style='height:250px;width:100%;background:url("http://magazine.hankyung.com/magazinedata/images/raw/201612/848d0f982fc0644e9f4d01d65d23dade.jpg");background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:5px;margin:10px 0 0'></div><div id='b'>믿을 만한 미국 고배당주 추천
+</div></a>
+
+<a href='/?q=AAPL'>#애플</a> <a href='/?q=MSFT'>#마이크로소프트</a> <a href='/?q=302440'>#SK바이오사이언스</a> <a href='/?q=005930'>#삼성전자</a> <a href='/?q=323410'>#카카오뱅크</a> <a href='/?q=035720'>#카카오</a> <a href='/?q=XLF'>#XLF</a> <a href='/?q=GDXD'>#GDXD</a><br>
+<a href='https://ae3a.github.io/sitemap_' style='color:#fafafa'>Sitemap 1</a> <a href='https://fluke103.github.io/sitemaps' style='color:#fafafa'>Sitemap 2</a> <a href='https://aelw.github.io/sitemaps' style='color:#fafafa'>Sitemap 3</a><br>
+<a>PC 접속주소 | stock.1002.pw</a>
+</div>
